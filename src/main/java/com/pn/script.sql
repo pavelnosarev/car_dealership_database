@@ -44,8 +44,54 @@ CREATE TABLE lease_contracts (
   FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
 
+-- populate with sample data
 
+INSERT INTO dealerships (name, address, phone)
+VALUES
+  ('ABC Motors', '123 Main St', '555-1234'),
+  ('XYZ Auto', '456 Elm St', '555-5678'),
+  ('123 Car Sales', '789 Oak St', '555-9012'),
+  ('Best Wheels', '321 Pine St', '555-3456'),
+  ('Sunset Motors', '987 Maple St', '555-7890');
 
+ INSERT INTO vehicles (VIN, SOLD, color, vehicle_type)
+ VALUES
+   ('1HGCM82633A123456', FALSE, 'Blue', 'Sedan'),
+   ('2G1WC5E30F1234567', TRUE, 'Red', 'Coupe'),
+   ('3VWCM7AJ9DM123456', FALSE, 'Silver', 'Hatchback'),
+   ('4S3BMHB68B1234567', FALSE, 'Black', 'SUV'),    ('5YJSA1DN1CF123456', TRUE, 'White', 'Electric'),
+   ('6F08C362589123456', TRUE, 'Yellow', 'Convertible'),
+   ('7F03C123456123456', FALSE, 'Green', 'Pickup');
+
+INSERT INTO inventory (dealership_id, VIN)
+VALUES
+  (1, '1HGCM82633A123456'),
+  (1, '2G1WC5E30F1234567'),
+  (2, '3VWCM7AJ9DM123456'),
+  (3, '4S3BMHB68B1234567'),
+  (4, '5YJSA1DN1CF123456'),
+  (4, '6F08C362589123456'),
+  (5, '7F03C123456123456');
+
+INSERT INTO sales_contracts (VIN)
+VALUES
+  ('2G1WC5E30F1234567'),
+  ('5YJSA1DN1CF123456'),
+  ('6F08C362589123456'),
+  ('7F03C123456123456'),
+  ('1HGCM82633A123456'),
+  ('4S3BMHB68B1234567'),
+  ('3VWCM7AJ9DM123456');
+
+ INSERT INTO lease_contracts (VIN)
+ VALUES
+   ('3VWCM7AJ9DM123456'),
+   ('1HGCM82633A123456'),
+   ('4S3BMHB68B1234567'),
+   ('2G1WC5E30F1234567'),
+   ('7F03C123456123456'),
+   ('5YJSA1DN1CF123456'),
+   ('6F08C362589123456');
 
 
 
